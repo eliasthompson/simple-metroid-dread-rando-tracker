@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'VDL-GigaMaruJr';
+  font-weight: 400;
+  src: url('../fonts/VDL-GigaMaruJr M.ttf') format('truetype');
+}
+
+* {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
+body {
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+	font-family: 'VDL-GigaMaruJr', sans-serif;
+	color: #FFFFFF;
+  overflow: hidden;
+  /* background: #0033cc; */
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#tracker {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.row {
+	display: flex;
+	text-align: center;
+  box-sizing: border-box;
+	padding: 14px 14px 0;
+}
+
+.item,
+.items {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+  user-select: none;
+	width: 60px;
+  height: 60px;
+}
+
+.item {
+  position: relative;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.item:first-child {
+	padding-left: 0;
+}
+
+.item:last-child {
+	padding-right: 0;
+}
+
+/* .items {
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+.item.double .items {
+	width: 134px;
+  height: 134px;
+}
+
+.item:not(.auto) .items {
+	cursor: pointer;
+}
+
+#misc {
+	width: 606px;
+  padding-bottom: 14px;
+}
+
+#misc .row {
+	width: 100%;
+}
+
+#misc .item,
+#misc .items {
+	width: auto;
+}
+
+.grayscale {
+  filter: brightness(50%) grayscale(100%);
+}
