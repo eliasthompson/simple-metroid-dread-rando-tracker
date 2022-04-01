@@ -20,13 +20,8 @@ function checkGoMode() {
   });
 
   if (
-    unacquiredItems.includes('morphball')
-    || (
-      unacquiredItems.includes('bomb')
-      && unacquiredItems.includes('speedbooster')
-      && unacquiredItems.includes('spacejump')
-    )
-    || unacquiredItems.includes('flashshift')
+    unacquiredItems.includes('spidermagnet')
+    || unacquiredItems.includes('morphball')
     || unacquiredItems.includes('grapplebeam')
     || unacquiredItems.includes('supermissile')
     || unacquiredItems.includes('screwattack')
