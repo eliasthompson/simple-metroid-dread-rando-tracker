@@ -10,26 +10,51 @@ function toggleItem(e) {
 };
 
 function checkGoMode() {
-  var unacquiredItemNodes = document.querySelectorAll('.items.grayscale');
+  var acquiredItemNodes = document.querySelectorAll('.items:not(.grayscale)');
   var goModeNode = document.querySelector('#go-mode');
-  var unacquiredItems = [];
-  let goMode = true;
+  var acquiredItems = [];
+  let goMode = false;
 
-  unacquiredItemNodes.forEach(function (item) {
-    unacquiredItems.push(item.getAttribute('id'));
+  acquiredItemNodes.forEach(function (item) {
+    acquiredItems.push(item.getAttribute('id'));
   });
 
   if (
-    unacquiredItems.includes('spidermagnet')
-    || unacquiredItems.includes('morphball')
-    || unacquiredItems.includes('grapplebeam')
-    || unacquiredItems.includes('supermissile')
-    || unacquiredItems.includes('screwattack')
-    || unacquiredItems.includes('crossbomb')
-    || unacquiredItems.includes('wavebeam')
-    || unacquiredItems.includes('powerbomb')
+    // Hard required
+    acquiredItems.includes('morphball')
+    && acquiredItems.includes('powerbomb')
+    && acquiredItems.includes('screwattack')
+    && (
+      acquiredItems.includes('bomb')
+      || acquiredItems.includes('crossbomb')
+      || acquiredItems.includes('speedbooster')
+      || acquiredItems.includes('spacejump')
+    )
+    && (
+      (
+        // Front door
+        acquiredItems.includes('spidermagnet')
+        && acquiredItems.includes('grapplebeam')
+        && acquiredItems.includes('supermissile')
+        && acquiredItems.includes('crossbomb')
+      ) || (
+        // Back door (psuedowave)
+        acquiredItems.includes('chargebeam')
+        && acquiredItems.includes('gravitysuit')
+        && (
+          (
+            // Ferenia Front
+            acquiredItems.includes('grapplebeam')
+          ) || (
+            // Cyan Teleporter
+            acquiredItems.includes('diffusionbeam')
+            && acquiredItems.includes('stormmissile')
+          )
+        )
+      )
+    )
   ) {
-    goMode = false;
+    goMode = true;
   }
 
   if (goMode && goModeNode.classList.contains('grayscale')) goModeNode.classList.remove('grayscale');

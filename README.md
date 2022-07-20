@@ -12,7 +12,7 @@
 * To use the tracker, right click the source in your Sources list and select `Interact`.
 * To toggle any item on or off, left-click the item in the window that comes up.
 
-Please note that the "Go Mode" indicator cannot be clicked and is currently designed to automatically toggle on or off based on the items needed to clear the game in standard settings.
+Please note that the "Go Mode" indicator cannot be clicked and is currently designed to automatically toggle on or off based on the items needed to clear the game in standard settings. It assume glitchless logic save for a simple psuedowave underneath the Ferenia elevator to Hanubia.
 
 ### Starting items
 To add always-on starting items, such as Slide or Charge Beam, add them as parameters to the URL. For example:
