@@ -66,6 +66,14 @@ img {
 	padding-right: 0;
 }
 
+.item.boss.dna::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent url(../images/items/dna.png) 18% 90% no-repeat;
+  content: '';
+}
+
 /* .items {
   position: absolute;
   top: 0;
@@ -82,7 +90,7 @@ img {
 }
 
 #misc {
-	width: 606px;
+	width: 680px;
   padding-bottom: 14px;
 }
 
